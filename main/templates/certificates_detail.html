@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% load i18n %}
+    <div class="row">
+        <div class="col-xxl-6 col-md-12 col-xs-12">
+            <img class="w-100 rounded" src="{{ object.diploma_image.url }}" alt="">
+        </div>
+        <div class="col-xxl-6 col-md-12 col-xs-12">
+            <h3>{% trans 'Пройдений матеріал:' %}</h3>
+            <ul>
+                {% for description in descriptions %}
+                    <li>{{ description.title }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <a class="btn btn-light mt-2" href="{% url 'certificates' %}">{% trans 'Назад' %}</a>
+{% endblock content %}

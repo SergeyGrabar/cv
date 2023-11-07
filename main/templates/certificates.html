@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% load i18n %}
+    <div id="carouselExample" class="pt-3 carousel slide">
+        <div class="carousel-inner rounded-3">
+            {% for diploma in diplomas %}
+                <div class="rounded-3 p-5 carousel-item {% if forloop.first %}active{% endif %}">
+                    <a class="text-decoration-none" href="{% url 'detail' diploma.pk %}">
+                        <img src="{{ diploma.diploma_image.url }}" class="mx-auto d-block w-75 rounded" alt="...">
+                        <p class="text-center text-white">{{ diploma.title }}</p>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+        <button class="hover-link carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="hover-link carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+{% endblock content %}

@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-05 20:02+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: cv/settings.py:122
+msgid "Ukraine"
+msgstr "Українська"
+
+#: cv/settings.py:123
+msgid "English"
+msgstr "Англійська"
+
+#: main/forms.py:5
+msgid "Ім'я"
+msgstr "Name"
+
+#: main/forms.py:7
+msgid "Тема"
+msgstr "Subject"
+
+#: main/forms.py:9
+msgid "Надіслати"
+msgstr "Send"
+
+#: main/templates/about.html:12
+msgid "Грабар Сергій"
+msgstr "Hrabar Serhii"
+
+#: main/templates/about.html:13 main/templates/index.html:7
+msgid "Python розробник"
+msgstr "Python developer"
+
+#: main/templates/about.html:14
+msgid "Харків"
+msgstr "Kharkiv"
+
+#: main/templates/certificates_detail.html:10
+msgid "Пройдений матеріал:"
+msgstr "Passed material:"
+
+#: main/templates/certificates_detail.html:18
+msgid "Назад"
+msgstr "Back"
+
+#: main/templates/contacts.html:54
+msgid "Залиште відгук"
+msgstr "Leave a review"
+
+#: main/templates/index.html:6
+msgid "Привіт, я Сергій Грабар"
+msgstr "Hello, I’m Serhii Hrabar"
+
+#: main/views.py:19 templates/base.html:39
+msgid "Головна"
+msgstr "Home"
+
+#: main/views.py:31 templates/base.html:42
+msgid "Про мене"
+msgstr "About me"
+
+#: main/views.py:46 templates/base.html:45
+msgid "Досвід роботи"
+msgstr "Experience"
+
+#: main/views.py:61 templates/base.html:48
+msgid "Освіта"
+msgstr "Education"
+
+#: main/views.py:73 templates/base.html:51
+msgid "Дипломи"
+msgstr "Diplomas"
+
+#: main/views.py:83
+#, fuzzy
+#| msgid "Пройдений матеріал:"
+msgid "Пройдений матеріал"
+msgstr "Passed material:"
+
+#: main/views.py:94 templates/base.html:54
+msgid "Навички"
+msgstr "Skills"
+
+#: main/views.py:104 templates/base.html:57
+msgid "Контакти"
+msgstr "Contacts"
+
+#: main/views.py:116
+msgid "Повідомлення надіслане"
+msgstr "Message sent"
+
+#: main/views.py:119
+msgid "Помилка відправки"
+msgstr "Sending error"
+
+#~ msgid "Досвід"
+#~ msgstr "Experience"
