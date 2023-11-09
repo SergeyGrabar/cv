@@ -118,6 +118,9 @@ class MyContacts(TemplateView):
             else:
                 messages.error(request, _('Помилка відправки'))
                 return redirect('contacts')
+        else:
+            messages.error(request, _('Помилка відправки'))
+            return redirect('contacts')
                 
 
 #=====================================
