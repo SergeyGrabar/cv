@@ -3,7 +3,7 @@
 {% block content %}
     {% load i18n %}
     {% for work in works %}
-        <div class="row border rounded-3 p-3 m-1" style="text-align: justify;">
+        <div class="row border rounded-3 p-3 m-1">
             <div class="col-12">
                 <h4>{{ work.year_work }}</h4>
             </div>
@@ -14,7 +14,7 @@
                 <h4>{{ work.position }}</h4>
             </div>
             <div class="col-12">
-                <p>{{ work.responsibilities }}</p>
+                <p class="hyphens">{{ work.responsibilities }}</p>
             </div>
         </div>
     {% endfor %}

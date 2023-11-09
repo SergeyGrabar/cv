@@ -109,8 +109,9 @@
     text-align: justify;
 }
 
-.p {
-    display: none;
+.hyphens{
+    text-align: justify;
+    hyphens: auto;
 }
 
 @media screen and (max-width: 576px) {
@@ -156,11 +157,7 @@
 }
 
 @media screen and (max-width: 576px) {
-    .h3 {
-        display: none;
-    }
-    .p {
-        display: block;
-        text-align: justify;
+    .hyphens {
+        font-size: smaller;
     }
 }
