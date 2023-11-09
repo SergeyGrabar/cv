@@ -14,6 +14,7 @@ from django.utils import translation
 from django.core.mail import send_mail
 from django.utils.translation import gettext as _
 from django.contrib import messages
+from django.core.exceptions import ValidationError
 
 def index(reqest):
     return render(reqest, 'index.html', {'title': _('Головна')})
@@ -111,7 +112,7 @@ class MyContacts(TemplateView):
         form = ContactForm(request.POST)
         if form.is_valid():
             message = f"Ім'я: {form.cleaned_data['name'].title()}\nEmail: {form.cleaned_data['email']}\nПовідомлення: {form.cleaned_data['message']}"
-            mail = send_mail(form.cleaned_data['subject_message'], message, 'sergeygrabar@gmail.com', ['serhiihrabar@ukr.net'], fail_silently=False)
+            mail = send_mail(form.cleaned_data['subject_message'], message, 'sergeygrabar@gmail.com', ['serhiihrabar@ukr.net'], fail_silently=True)
             if mail:
                 messages.success(request, _('Повідомлення надіслане'))
                 return redirect('contacts')
@@ -119,7 +120,7 @@ class MyContacts(TemplateView):
                 messages.error(request, _('Помилка відправки'))
                 return redirect('contacts')
         else:
-            messages.error(request, _('Помилка відправки'))
+            messages.error(request, _('Введено не коректний email'))
             return redirect('contacts')
                 
 
