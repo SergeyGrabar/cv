@@ -111,10 +111,13 @@ class MyContacts(TemplateView):
     def post(self, request, *args, **kwargs):
         form = ContactForm(request.POST)
         if form.is_valid():
-            message = f"Ім'я: {form.cleaned_data['name'].title()}\nEmail: {form.cleaned_data['email']}\nПовідомлення: {form.cleaned_data['message']}"
+            name = form.cleaned_data['name'].title()
+            email = form.cleaned_data['email']
+            message = f"Ім'я: {name}\nEmail: {email}\nПовідомлення: {form.cleaned_data['message']}"
             mail = send_mail(form.cleaned_data['subject_message'], message, 'sergeygrabar@gmail.com', ['serhiihrabar@ukr.net'], fail_silently=True)
             if mail:
                 messages.success(request, _('Повідомлення надіслане'))
+                send_mail('Дякую за відгук!!!', f'Дякую за відгук {name}. Я ціную вашу думку!', 'sergeygrabar@gmail.com', [f'{email}'])
                 return redirect('contacts')
             else:
                 messages.error(request, _('Помилка відправки'))
