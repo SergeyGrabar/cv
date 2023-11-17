@@ -13,24 +13,24 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 from django.utils.translation import gettext_lazy as _
-from decouple import config
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = config('SECRET_KEY')
+env = environ.Env()
+environ.Env.read_env(env_file=os.path.join(BASE_DIR, '.env'))
+SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool)
+DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -153,5 +153,5 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587  # 587 - для TLS, 465 - для SSL
 EMAIL_USE_TLS = True  # Используйте True для TLS, False для SSL
 EMAIL_USE_SSL = False  # Используйте False для TLS, True для SSL
-EMAIL_HOST_USER = 'sergeygrabar@gmail.com'  # Ваш адрес Gmail
-EMAIL_HOST_PASSWORD = 'jeewcxzcsayafvgh'
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
